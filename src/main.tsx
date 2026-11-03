@@ -27,7 +27,6 @@ function GeometricArt(){const ref=useRef<HTMLDivElement>(null);const [paused,set
   <g className="orbit orbit-five"><circle cx="320" cy="320" r="101" fill="none" stroke="#111" strokeWidth="4" strokeDasharray="350 285" transform="rotate(75 320 320)"/></g>
   <g className="orbit orbit-six"><circle cx="320" cy="320" r="76" fill="none" stroke="#111" strokeWidth="23" strokeDasharray="140 338" transform="rotate(192 320 320)"/></g>
   <g className="plane plane-two">
-    <path d="M282 94 465 428 350 456Z" fill="#8bafc4" fillOpacity=".4"/>
     <path d="M145 214A225 225 0 0 1 533 391L419 351A105 105 0 0 0 239 261Z" fill="#dcecf5" fillOpacity=".62"/>
   </g>
   <g className="orbit orbit-seven"><circle cx="320" cy="320" r="298" fill="none" stroke="#111" strokeWidth="3" strokeDasharray="320 1552" transform="rotate(145 320 320)"/></g>
