@@ -36,3 +36,5 @@
 .contact-grid .form-privacy{font-size:11px;color:#666;line-height:1.7;margin:0 0 20px}
 .enquiry-submit:disabled{background:#e5e5e0;color:#62625d;cursor:not-allowed;padding:14px 20px}
 @media(max-width:700px){.enquiry-panel{margin-top:25px}.form-row{grid-template-columns:1fr;gap:0}.service-details{font-size:12px}.project-focus{font-size:12px}.contact-grid .contact-intro{margin-top:22px}}
+
+.orbit-eight{animation-duration:28s;animation-direction:reverse}.orbit-nine{animation-duration:36s}

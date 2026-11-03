@@ -41,3 +41,9 @@ The enquiry form is a clearly labelled UI preview. Submission is disabled and pr
 For the next iteration, use a hosted form service with server-side validation and spam controls, or a small serverless endpoint that sends email using credentials held only on the server. Configure an approved recipient, origin restrictions, rate limiting and accessible success/error states. Publish a privacy notice covering the data controller, purpose, lawful basis, delivery provider, retention and contact/rights information. Test real delivery and failure handling before enabling the button. Never put mail-service API keys in Vite environment variables exposed to the client.
 
 Portfolio descriptions are proposed project focuses, not verified outcomes. Replace illustrative artwork only with approved screenshots. Future case studies should cover context, challenge, solution, deliverables, verified outcomes and screenshots.
+
+## Portfolio wheel
+
+`src/PortfolioWheel.tsx` contains project metadata and the six image/description/destination entries. Replace the clearly labelled SVG concepts in `public/portfolio` with approved screenshots when supplied; these temporary visuals do not represent delivered client websites. Each sector currently opens an accessible project-preview dialog. Replace destination handling with real case-study URLs when available.
+
+The complete wheel has six equal 60-degree sectors, with only its upper semicircle visible (three sector-widths at a time). Rotation takes 90 seconds, pauses on hover or with the control, and stops offscreen, in background tabs, and while a preview dialog is open. Narrow screens and reduced-motion users see a static wheel with stable project links beneath it. Those links also give keyboard users access to projects whose sectors are clipped out of view. The preview dialog supports Escape and restores focus when closed.
