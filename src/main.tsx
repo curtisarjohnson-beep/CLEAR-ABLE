@@ -29,16 +29,16 @@ function Header(){const [open,setOpen]=useState(false);return <header className=
 function GeometricArt(){const ref=useRef<HTMLDivElement>(null);const [paused,setPaused]=useState(false);useEffect(()=>{const element=ref.current;if(!element)return;const observer=new IntersectionObserver(([entry])=>element.classList.toggle('offscreen',!entry.isIntersecting));observer.observe(element);const visibility=()=>element.classList.toggle('hidden-tab',document.hidden);document.addEventListener('visibilitychange',visibility);return()=>{observer.disconnect();document.removeEventListener('visibilitychange',visibility)}},[]);return <div ref={ref} className={'artwork '+(paused?'paused':'')}><svg viewBox="0 0 640 640" role="img" aria-labelledby="art-title">
   <title id="art-title">A kinetic composition of interrupted black arcs and overlapping translucent ice-blue forms</title>
   <g className="plane plane-back">
-    <path d="M320 66A254 254 0 0 1 574 320L435 320A115 115 0 0 0 320 205Z" fill="#b9d7e8" fillOpacity=".58"/>
+    <path d="M320 66A254 254 0 0 1 574 320L542 320A222 222 0 0 0 320 98Z" fill="#b9d7e8" fillOpacity=".58"/>
   </g>
   <g className="plane plane-disc">
-    <path d="M125 320A195 195 0 0 1 320 125L320 320Z" fill="#dcecf5" fillOpacity=".8"/>
+    <path d="M210 320A110 110 0 0 1 320 210L320 320Z" fill="#dcecf5" fillOpacity=".8"/>
   </g>
   <g className="orbit orbit-one"><circle cx="320" cy="320" r="264" fill="none" stroke="#111" strokeWidth="40" strokeDasharray="640 68 230 721" transform="rotate(-74 320 320)"/></g>
   <g className="orbit orbit-two"><circle cx="320" cy="320" r="219" fill="none" stroke="#111" strokeWidth="7" strokeDasharray="470 110 185 611" transform="rotate(38 320 320)"/></g>
   <g className="orbit orbit-three"><circle cx="320" cy="320" r="178" fill="none" stroke="#111" strokeWidth="50" strokeDasharray="530 589" transform="rotate(102 320 320)"/></g>
   <g className="plane plane-one">
-    <path d="M71 320A249 249 0 0 0 569 320L435 320A115 115 0 0 1 205 320Z" fill="#b9d7e8" fillOpacity=".65"/>
+    <path d="M123 320A197 197 0 0 0 517 320L457 320A137 137 0 0 1 183 320Z" fill="#b9d7e8" fillOpacity=".65"/>
   </g>
   <g className="orbit orbit-four"><circle cx="320" cy="320" r="134" fill="none" stroke="#111" strokeWidth="14" strokeDasharray="285 64 100 393" transform="rotate(-48 320 320)"/></g>
   <g className="orbit orbit-five"><circle cx="320" cy="320" r="101" fill="none" stroke="#111" strokeWidth="4" strokeDasharray="350 285" transform="rotate(75 320 320)"/></g>
