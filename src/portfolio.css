@@ -1,12 +1,18 @@
-.wheel-viewport{width:100%;aspect-ratio:2/1;overflow:hidden;border-bottom:1px solid #b4b4af;isolation:isolate}
-.portfolio-wheel{display:block;width:100%;height:100%;overflow:hidden}
-.portfolio-rotor{transform-origin:600px 600px;animation:portfolio-turn 90s linear infinite}
-.portfolio-panel{transform-origin:0px 0px;animation:portfolio-turn 90s linear infinite reverse}
-.wheel-paused .portfolio-rotor,.wheel-paused .portfolio-panel,.wheel-viewport:hover .portfolio-rotor,.wheel-viewport:hover .portfolio-panel{animation-play-state:paused}
-.panel-outline{fill:transparent;stroke:#a6aaa6;stroke-width:.7;vector-effect:non-scaling-stroke;pointer-events:all}
-.portfolio-wheel a:hover .panel-outline{stroke:#111;stroke-width:2;fill:rgb(17 17 17 / .05)}
-.portfolio-wheel a{cursor:pointer}
-.portfolio-mobile-panels{display:none}
+.portfolio-track{--preview-width:280px;position:relative;display:flex;align-items:start;gap:70px;overflow-x:auto;overflow-y:hidden;padding:48px max(24px,calc((100% - var(--preview-width))/2)) 70px;scrollbar-width:none;overscroll-behavior-x:contain;overflow-anchor:none}
+.portfolio-track::-webkit-scrollbar{display:none}
+.portfolio-card{flex:0 0 var(--preview-width);min-width:0;transform:translateY(var(--card-drop,0px)) rotate(var(--card-angle,0deg));transform-origin:center 210px}
+.portfolio-card-label{font-size:9px;letter-spacing:.8px;margin:0 0 12px;color:#666}
+.portfolio-card img{display:block;width:100%;height:350px;object-fit:cover;border:1px solid #c9c9c5}
+.portfolio-card h3{font-size:17px;font-weight:550;line-height:1.35;letter-spacing:-.4px;margin:20px 0 8px}
+.portfolio-card a>p{font-size:13px;color:#666;margin:0 0 10px}
+.portfolio-card-link{font-size:12px;text-decoration:underline;text-underline-offset:4px}
+.portfolio-card a{display:block}
+.portfolio-card a:focus-visible{outline-offset:7px}
+.portfolio-card a:hover .portfolio-card-link{text-decoration-thickness:2px}
+.portfolio-controls{display:flex;gap:22px}
+.portfolio-controls button{min-height:44px}
+@media(max-width:700px){.portfolio-track{--preview-width:clamp(180px,52vw,230px);gap:24px;padding-top:35px;padding-bottom:65px}.portfolio-card img{height:300px}.portfolio-card h3{font-size:16px}.portfolio-card a>p{font-size:12px}.portfolio-controls{gap:20px}}
+@media(prefers-reduced-motion:reduce){.portfolio-card{transform:none}}
 .wheel-toolbar{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:20px 0 8px}
 .wheel-toolbar p{font-size:8px;letter-spacing:1px;color:#666;margin:0}
 .wheel-toolbar button{background:none;padding:8px 0 8px 12px;font-size:11px;white-space:nowrap}
@@ -29,16 +35,5 @@
 .project-dialog ul{padding-left:18px}
 .project-dialog .project-dialog-status{font-size:12px;border-left:2px solid #8bafc4;padding-left:15px;margin-bottom:25px}
 .project-dialog .project-dialog-footnote{font-size:11px;margin:30px 0 0;border-top:1px solid #c9c9c5;padding-top:20px}
-@keyframes portfolio-turn{to{transform:rotate(360deg)}}
-@media(max-width:700px){.portfolio-rotor,.portfolio-panel{animation:none}.wheel-projects{grid-template-columns:1fr;gap:22px}.wheel-toolbar{gap:15px;align-items:start}.wheel-toolbar p{font-size:7px;line-height:1.8;max-width:180px}.wheel-toolbar button{padding-top:0;font-size:10px}.wheel-help{font-size:10px}.wheel-projects h3{font-size:15px}.wheel-project-open{font-size:9px}.project-dialog-content{padding:25px}.project-dialog h2{font-size:31px}}
-@media(prefers-reduced-motion:reduce){.portfolio-rotor,.portfolio-panel{animation:none}}
-@media(max-width:700px),(prefers-reduced-motion:reduce){.wheel-toolbar button{display:none}}
 
-@media(max-width:700px){
-  .wheel-viewport{aspect-ratio:auto;overflow:visible;border-bottom:0}
-  .portfolio-wheel{display:none}
-  .portfolio-mobile-panels{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 3px 18px;scroll-padding:3px}
-  .portfolio-mobile-panels>a{flex:0 0 160px;scroll-snap-align:start}
-  .portfolio-mobile-panels img{display:block;width:160px;height:203px;object-fit:cover;border:1px solid #c9c9c5}
-  .portfolio-mobile-panels span{display:block;font-size:10px;margin-top:10px}
-}
+@media(max-width:700px){.wheel-projects{grid-template-columns:1fr;gap:22px}.wheel-toolbar{gap:15px;align-items:start;flex-wrap:wrap}.wheel-toolbar p{font-size:7px;line-height:1.8}.wheel-help{font-size:10px}.wheel-projects h3{font-size:15px}.wheel-project-open{font-size:9px}.project-dialog-content{padding:25px}.project-dialog h2{font-size:31px}}
