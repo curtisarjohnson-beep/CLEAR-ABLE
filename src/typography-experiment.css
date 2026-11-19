@@ -1,0 +1,27 @@
+/* Removable comparison module. The SVG wordmark and legacy footer logo are excluded. */
+@font-face{font-family:'Outfit Comparison';src:url('./fonts/candidates/outfit-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+:root{--comparison-family:'General Sans',Arial,Helvetica,sans-serif}
+:root[data-typeface='satoshi']{--comparison-family:Satoshi,Arial,Helvetica,sans-serif;--type-display-weight:700;--type-section-weight:500;--type-subheading-weight-550:500;--type-subheading-weight-600:700;--type-label-weight-emphasis:700;--type-label-weight-550:500;--type-body-weight-750:700}
+:root[data-typeface='outfit']{--comparison-family:'Outfit Comparison',Arial,Helvetica,sans-serif}
+/* Nearest explicit CDN weights; 550 maps to 500 or 600, per family.
+   Satoshi 600 is equidistant from 500 and 700; use 700 for emphasis. */
+:root:not([data-typeface]),:root[data-typeface='general-sans']{
+ --type-display-weight:700;
+ --type-section-weight:600;
+ --type-subheading-weight-550:600;
+ --type-body-weight-750:700;
+ --type-label-weight-550:600;
+}
+.type-lab{position:fixed;right:16px;bottom:16px;z-index:30;font:12px/1.5 system-ui,sans-serif;letter-spacing:normal;color:#111;background:#fafaf8;border:1px solid #b4b4af;max-width:calc(100vw - 32px);box-shadow:0 2px 10px rgb(0 0 0 / .08)}
+.type-lab summary{padding:9px 12px;cursor:pointer;font:inherit;list-style:none;display:flex;align-items:center;gap:12px;min-height:40px}
+.type-lab summary::-webkit-details-marker{display:none}
+.type-lab summary::after{content:'+';margin-left:auto}
+.type-lab[open] summary::after{content:'−'}
+.type-lab-panel{padding:0 12px 12px;max-width:260px}
+.type-lab label{display:block;font:inherit;margin:7px 0}
+.type-lab select{width:100%;min-height:40px;font:inherit;letter-spacing:normal;color:inherit;background:#fff;border:1px solid #888;border-radius:0;padding:6px 8px}
+.type-lab p{font:inherit;letter-spacing:normal;margin:10px 0 0;color:#555}
+.type-lab summary:focus-visible,.type-lab select:focus-visible{outline:2px solid #42647a;outline-offset:3px}
+@media(max-width:700px){.type-lab{right:10px;bottom:10px;max-width:calc(100vw - 20px)}}
+
+.type-lab-error{color:#8b2e2e!important}

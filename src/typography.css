@@ -1,11 +1,10 @@
 /* Typography playground — change roles here; layout and motion live elsewhere.
-   Base values retain the original Inter design. Variants preserve existing
-   component sizes and responsive steps. No font experiments beyond the wordmark. */
-@font-face{font-family:Inter;src:url('../public/fonts/inter-latin-wght-normal.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+   Sizes and spacing retain the existing design. Families are controlled by
+   the removable comparison module; logo typography remains independent. */
 @font-face{font-family:'Cormorant Garamond';src:url('../public/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
 @font-face{font-family:Outfit;src:url('../public/fonts/outfit-latin-300-normal.woff2') format('woff2');font-style:normal;font-weight:300;font-display:swap}
 :root {
-  --font-existing: Inter, Arial, Helvetica, sans-serif;
+  --font-existing: var(--comparison-family, "General Sans", Arial, Helvetica, sans-serif);
 
   /* Display */
   --type-display-family: var(--font-existing);
