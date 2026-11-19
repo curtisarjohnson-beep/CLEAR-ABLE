@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './typography.css';
 import './style.css';
 import { Wordmark } from './Wordmark';
+import { HeaderLogo } from './HeaderLogo';
 import { PortfolioWheel } from './PortfolioWheel';
 
 const services = [
@@ -27,7 +28,7 @@ const services = [
 ];
 
 function Arrow({direction='diagonal'}:{direction?:'diagonal'|'down'|'right'|'up'}){return <svg className={'arrow arrow-'+direction} viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg>}
-function Header(){const [open,setOpen]=useState(false);return <header className="header"><Wordmark/><button className="menu" aria-expanded={open} aria-controls="navigation" onClick={()=>setOpen(!open)}>{open?'Close −':'Menu +'}</button><nav id="navigation" className={open?'open':''} aria-label="Main navigation">{['Services','Approach','Work','About'].map(item=><a key={item} href={'#'+item.toLowerCase()} onClick={()=>setOpen(false)}>{item}</a>)}<a className="contact-nav" href="#contact" onClick={()=>setOpen(false)}>Get in touch <span><Arrow/></span></a></nav></header>}
+function Header(){const [open,setOpen]=useState(false);return <header className="header"><HeaderLogo/><button className="menu" aria-expanded={open} aria-controls="navigation" onClick={()=>setOpen(!open)}>{open?'Close −':'Menu +'}</button><nav id="navigation" className={open?'open':''} aria-label="Main navigation">{['Services','Approach','Work','About'].map(item=><a key={item} href={'#'+item.toLowerCase()} onClick={()=>setOpen(false)}>{item}</a>)}<a className="contact-nav" href="#contact" onClick={()=>setOpen(false)}>Get in touch <span><Arrow/></span></a></nav></header>}
 function GeometricArt(){const ref=useRef<HTMLDivElement>(null);const [paused,setPaused]=useState(false);useEffect(()=>{const element=ref.current;if(!element)return;const observer=new IntersectionObserver(([entry])=>element.classList.toggle('offscreen',!entry.isIntersecting));observer.observe(element);const visibility=()=>element.classList.toggle('hidden-tab',document.hidden);document.addEventListener('visibilitychange',visibility);return()=>{observer.disconnect();document.removeEventListener('visibilitychange',visibility)}},[]);return <div ref={ref} className={'artwork '+(paused?'paused':'')}><svg viewBox="0 0 640 640" role="img" aria-labelledby="art-title">
   <title id="art-title">A kinetic composition of interrupted black arcs and overlapping translucent ice-blue forms</title>
   <g className="plane plane-back">
