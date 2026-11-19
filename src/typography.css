@@ -1,0 +1,154 @@
+/* Typography playground — change roles here; layout and motion live elsewhere.
+   Base values retain the original Inter design. Variants preserve existing
+   component sizes and responsive steps. No font experiments beyond the wordmark. */
+@font-face{font-family:Inter;src:url('../public/fonts/inter-latin-wght-normal.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('../public/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:Outfit;src:url('../public/fonts/outfit-latin-300-normal.woff2') format('woff2');font-style:normal;font-weight:300;font-display:swap}
+:root {
+  --font-existing: Inter, Arial, Helvetica, sans-serif;
+
+  /* Display */
+  --type-display-family: var(--font-existing);
+  --type-display-weight: 650;
+  --type-display-size: clamp(49px,5.65vw,88px);
+  --type-display-tracking: -.068em;
+  --type-display-leading: 1.02;
+  --type-display-size-tablet: 6vw;
+  --type-display-size-mobile: clamp(44px,10.5vw,73px);
+
+  /* Section */
+  --type-section-family: var(--font-existing);
+  --type-section-weight: 550;
+  --type-section-size: clamp(35px,4vw,60px);
+  --type-section-tracking: -.055em;
+  --type-section-leading: 1.08;
+  --type-section-size-statement: clamp(55px,7vw,100px);
+  --type-section-size-statement-mobile: 65px;
+  --type-section-size-mobile: 39px;
+  --type-section-size-dialog: 40px;
+  --type-section-leading-1-12: 1.12;
+  --type-section-size-dialog-mobile: 31px;
+
+  /* Subheading */
+  --type-subheading-family: var(--font-existing);
+  --type-subheading-weight: 500;
+  --type-subheading-size: 24px;
+  --type-subheading-tracking: -.9px;
+  --type-subheading-leading: 1.2;
+  --type-subheading-size-13px: 13px;
+  --type-subheading-weight-600: 600;
+  --type-subheading-size-23px: 23px;
+  --type-subheading-tracking-7px: -.7px;
+  --type-subheading-size-15px: 15px;
+  --type-subheading-tracking-3px: -.3px;
+  --type-subheading-weight-550: 550;
+  --type-subheading-size-21px: 21px;
+  --type-subheading-size-22px: 22px;
+  --type-subheading-size-17px: 17px;
+  --type-subheading-leading-1-35: 1.35;
+  --type-subheading-tracking-4px: -.4px;
+  --type-subheading-size-16px: 16px;
+  --type-subheading-leading-1-4: 1.4;
+
+  /* Body */
+  --type-body-family: var(--font-existing);
+  --type-body-weight: 400;
+  --type-body-size: 16px;
+  --type-body-tracking: normal;
+  --type-body-leading: 1.6;
+  --type-body-size-17px: 17px;
+  --type-body-leading-1-7: 1.7;
+  --type-body-size-14px: 14px;
+  --type-body-size-13px: 13px;
+  --type-body-size-22px: 22px;
+  --type-body-leading-1-2: 1.2;
+  --type-body-size-42px: 42px;
+  --type-body-weight-750: 750;
+  --type-body-tracking-2px: -2px;
+  --type-body-leading-1: 1;
+  --type-body-size-11px: 11px;
+  --type-body-size-15px: 15px;
+  --type-body-size-20px: 20px;
+  --type-body-tracking-5px: -.5px;
+  --type-body-size-34px: 34px;
+  --type-body-size-12px: 12px;
+  --type-body-leading-1-9: 1.9;
+  --type-body-leading-1-8: 1.8;
+  --type-body-size-10px: 10px;
+
+  /* Nav */
+  --type-nav-family: var(--font-existing);
+  --type-nav-weight: 500;
+  --type-nav-size: 13px;
+  --type-nav-tracking: normal;
+  --type-nav-leading: 1.6;
+  --type-nav-size-12px: 12px;
+
+  /* Label */
+  --type-label-family: var(--font-existing);
+  --type-label-weight: 400;
+  --type-label-weight-emphasis: 600;
+  --type-label-size: 10px;
+  --type-label-tracking: 1.1px;
+  --type-label-leading: 1.6;
+  --type-label-size-8px: 8px;
+  --type-label-tracking-1px: 1px;
+  --type-label-size-9px: 9px;
+  --type-label-tracking-0: 0;
+  --type-label-size-11px: 11px;
+  --type-label-size-14px: 14px;
+  --type-label-tracking-6px: .6px;
+  --type-label-size-7px: 7px;
+  --type-label-size-12px: 12px;
+  --type-label-leading-1-8: 1.8;
+  --type-label-weight-550: 550;
+  --type-label-leading-1-5: 1.5;
+  --type-label-tracking-8px: .8px;
+
+  /* Button */
+  --type-button-family: var(--font-existing);
+  --type-button-weight: 400;
+  --type-button-weight-medium: 500;
+  --type-button-size: 12px;
+  --type-button-tracking: normal;
+  --type-button-leading: 1.6;
+  --type-button-size-9px: 9px;
+  --type-button-tracking-4px: .4px;
+  --type-button-size-11px: 11px;
+  --type-button-size-10px: 10px;
+
+  /* Quote */
+  --type-quote-family: var(--font-existing);
+  --type-quote-weight: 400;
+  --type-quote-size: 16px;
+  --type-quote-tracking: normal;
+  --type-quote-leading: 1.6;
+
+  /* Provisional wordmark: independent size, spacing and ampersand proportions. */
+  --wordmark-family: 'Cormorant Garamond', Georgia, serif;
+  --wordmark-weight: 700;
+  --wordmark-color: #303234;
+  --wordmark-size: 32px;
+  --wordmark-size-mobile: 29px;
+  --wordmark-size-footer: 30px;
+  --wordmark-tracking: -.025em;
+  --wordmark-leading: 1;
+  --wordmark-gap: .16em;
+  --wordmark-amp-family: Outfit, Arial, sans-serif;
+  --wordmark-amp-weight: 300;
+  --wordmark-amp-color: #8bafc4;
+  --wordmark-amp-scale: .8em;
+  --wordmark-amp-offset: .015em;
+}
+.wordmark{display:inline-flex;align-items:baseline;gap:var(--wordmark-gap);white-space:nowrap;font-family:var(--wordmark-family);font-size:var(--wordmark-size);font-weight:var(--wordmark-weight);letter-spacing:var(--wordmark-tracking);line-height:var(--wordmark-leading);color:var(--wordmark-color)}
+.wordmark-ampersand{font-family:var(--wordmark-amp-family);font-weight:var(--wordmark-amp-weight);font-size:var(--wordmark-amp-scale);letter-spacing:0;color:var(--wordmark-amp-color);position:relative;top:var(--wordmark-amp-offset)}
+footer>.wordmark{font-size:var(--wordmark-size-footer)}
+blockquote,.editorial-quote{font-family:var(--type-quote-family);font-weight:var(--type-quote-weight);font-size:var(--type-quote-size);letter-spacing:var(--type-quote-tracking);line-height:var(--type-quote-leading)}
+@media(max-width:700px){.wordmark{font-size:var(--wordmark-size-mobile)}}
+
+/* Role defaults use low specificity: existing component variants keep their
+   exact hierarchy, while family/weight/tracking/leading remain editable here. */
+:where(.header nav,.menu){font-family:var(--type-nav-family);letter-spacing:var(--type-nav-tracking);line-height:var(--type-nav-leading)}
+:where(button,.button,.text-link,.service-enquiry,.portfolio-card-link,.wheel-project-open){font-family:var(--type-button-family);font-weight:var(--type-button-weight);letter-spacing:var(--type-button-tracking);line-height:var(--type-button-leading)}
+.hero-actions :where(.button,.text-link){font-weight:inherit}
+:where(.eyebrow,.section-label,.art-caption,.hero-foot,.index,small,.portfolio-card-label,.wheel-toolbar>p,.wheel-project-number,.enquiry-panel label){font-family:var(--type-label-family);font-weight:var(--type-label-weight)}

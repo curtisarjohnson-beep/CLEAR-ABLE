@@ -32,7 +32,7 @@ Vite uses relative asset URLs so the build works at the repository Pages subpath
 - Layout, palette, responsive rules and animation: `src/style.css`
 - Metadata: `index.html`
 
-Typography uses Inter from Google Fonts with system sans-serif fallbacks. The site remains functional without font network access. Replace placeholders and add verified business/contact/legal information before public launch.
+Typography is self-hosted with system fallbacks; font files and SIL Open Font Licenses are in `public/fonts`. Replace placeholders and add verified business/contact/legal information before public launch.
 
 ## Enquiry delivery (not connected)
 
@@ -47,3 +47,26 @@ Portfolio descriptions are proposed project focuses, not verified outcomes. Repl
 `src/PortfolioWheel.tsx` contains project metadata and the six image/description/destination entries. Replace the clearly labelled SVG concepts in `public/portfolio` with approved screenshots when supplied; these temporary visuals do not represent delivered client websites. Each sector currently opens an accessible project-preview dialog. Replace destination handling with real case-study URLs when available.
 
 The portfolio uses a horizontal row of large rectangular previews on a shallow curved path. Neighbouring cards tilt gently; the centred card is upright. Repeated sets provide seamless slow travel. Hover, keyboard focus, offscreen state, hidden tabs and project dialogs pause automatic motion. Touch/manual navigation pauses it until Play is selected. Previous/Next controls and horizontal swiping work at all sizes. Reduced-motion users get a still, untilted row. Stable project links and Escape-enabled dialogs retain keyboard access and focus restoration.
+
+## Typography playground (provisional)
+
+All typography controls are in `src/typography.css`. Edit each `--type-<role>-family`, `-weight`, `-size`, `-tracking` (letter spacing) and `-leading` (line height). Component variants retain the original sizes/weights and responsive steps; these variants live alongside each role. Tablet/mobile and statement/dialog heading sizes have named controls. Variants with numeric suffixes preserve the existing component hierarchy. Layout, content and animation remain in their original files.
+
+| Role | Current family | Current weights |
+| --- | --- | --- |
+| Wordmark words | Cormorant Garamond | Bold 700 |
+| Wordmark ampersand | Outfit | Light 300 |
+| Display/hero heading | Inter | 650 |
+| Section headings | Inter | 550 |
+| Subheadings | Inter | 500–600 |
+| Body and form text | Inter | 400 |
+| Navigation | Inter | 500 (mobile menu 400) |
+| Labels/metadata | Inter | 400, with 600 for section labels/eyebrows |
+| Buttons and text links | Inter | 400–500 |
+| Editorial quotes (prepared, not currently rendered) | Inter | 400 |
+
+`Wordmark.tsx` is shared by the header and footer. Tune `--wordmark-*` for word/ampersand families, weight, charcoal/blue colours, desktop/mobile/footer size, tracking, gap, ampersand scale and baseline offset. This is an adjustable type-only experiment, not a final logo asset.
+
+The self-hosted Latin fonts come from Fontsource 5.3.0: `@fontsource-variable/inter` (variable weight), `@fontsource/cormorant-garamond` (700) and `@fontsource/outfit` (300). Licenses are included. Additional font experiments require adding licensed font files or using an already installed family, then updating the relevant role family. No external Google Fonts requests are needed.
+
+To revert the experiment, revert the typography commit as a unit. No application content, data or animation configuration depends on the new type system.
