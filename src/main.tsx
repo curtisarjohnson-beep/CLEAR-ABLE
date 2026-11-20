@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './typography.css';
 import './style.css';
-import './typography-experiment.css';
-import { TypographySelector } from './TypographySelector';
-import { applyTypographySystem, readTypographySystem, ensureTypographyFonts } from './typography-preference';
 import { Wordmark } from './Wordmark';
 import { HeaderLogo } from './HeaderLogo';
 import { PortfolioWheel } from './PortfolioWheel';
@@ -93,8 +90,5 @@ function Contact(){return <section id="contact" className="section contact">
 </section>}
 
 function Footer(){return <footer><Wordmark/><p>Clarity creates capability.</p><div><span>© {new Date().getFullYear()} CLEAR & ABLE</span><span>UK · INDEPENDENT DIGITAL SOLUTIONS</span><a href="#">Back to top <Arrow direction="up"/></a></div><small>Design preview · Business and legal information to be confirmed before launch.</small></footer>}
-function App(){return <><TypographySelector/><a className="skip-link" href="#main">Skip to content</a><Header/><main id="main"><Hero/><Services/><Approach/><Portfolio/><Freedom/><Contact/></main><Footer/></>}
-// Apply the saved choice before React's first render to avoid a default-font flash.
-applyTypographySystem(readTypographySystem());
-void ensureTypographyFonts().catch(() => { /* Type lab reports loading failures. */ });
+function App(){return <><a className="skip-link" href="#main">Skip to content</a><Header/><main id="main"><Hero/><Services/><Approach/><Portfolio/><Freedom/><Contact/></main><Footer/></>}
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);

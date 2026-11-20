@@ -3,7 +3,7 @@
 .portfolio-card{flex:0 0 var(--preview-width);min-width:0;transform:translateY(var(--card-drop,0px)) rotate(var(--card-angle,0deg));transform-origin:center 210px}
 .portfolio-card-label{font-size:var(--type-label-size-9px);letter-spacing:var(--type-label-tracking-8px);margin:0 0 12px;color:#666;font-family:var(--type-label-family)}
 .portfolio-card img{display:block;width:100%;height:350px;object-fit:cover;border:1px solid #c9c9c5}
-.portfolio-card h3{font-size:var(--type-subheading-size-17px);font-weight:var(--type-subheading-weight-550);line-height:var(--type-subheading-leading-1-35);letter-spacing:var(--type-subheading-tracking-4px);margin:20px 0 8px;font-family:var(--type-subheading-family)}
+.portfolio-card h3{font-size:var(--type-subheading-size-17px);font-weight:var(--type-subheading-weight);line-height:var(--type-subheading-leading-1-35);letter-spacing:var(--type-subheading-tracking-4px);margin:20px 0 8px;font-family:var(--type-subheading-family)}
 .portfolio-card a>p{font-size:var(--type-body-size-13px);color:#666;margin:0 0 10px;font-family:var(--type-body-family)}
 .portfolio-card-link{font-size:var(--type-button-size);text-decoration:underline;text-underline-offset:4px;font-family:var(--type-button-family)}
 .portfolio-card a{display:block}
@@ -20,7 +20,7 @@
 .wheel-projects{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 .wheel-projects>a{display:flex;align-items:start;gap:15px;border-top:1px solid #c9c9c5;padding:23px 0 0}
 .wheel-project-number{font-size:var(--type-label-size-9px);color:#666;margin-top:4px;font-family:var(--type-label-family)}
-.wheel-projects h3{font-size:var(--type-subheading-size-16px);font-weight:var(--type-subheading-weight-550);letter-spacing:var(--type-subheading-tracking-4px);line-height:var(--type-subheading-leading-1-4);margin-bottom:5px;font-family:var(--type-subheading-family)}
+.wheel-projects h3{font-size:var(--type-subheading-size-16px);font-weight:var(--type-subheading-weight);letter-spacing:var(--type-subheading-tracking-4px);line-height:var(--type-subheading-leading-1-4);margin-bottom:5px;font-family:var(--type-subheading-family)}
 .wheel-projects p{font-size:var(--type-body-size-11px);color:#666;margin:0;font-family:var(--type-body-family)}
 .wheel-project-open{font-size:var(--type-button-size-10px);margin-left:auto;white-space:nowrap;margin-top:4px;font-family:var(--type-button-family)}
 .wheel-project-open>span{margin-left:10px}
@@ -31,7 +31,7 @@
 .project-close{display:block;margin-left:auto;margin-bottom:36px;padding:8px 0 8px 16px;background:none;font-size:var(--type-button-size);font-family:var(--type-button-family)}
 .project-dialog h2{font-size:var(--type-section-size-dialog);line-height:var(--type-section-leading-1-12);margin:22px 0;font-family:var(--type-section-family)}
 .project-dialog p,.project-dialog li{font-size:var(--type-body-size-14px);line-height:var(--type-body-leading-1-8);color:#555;font-family:var(--type-body-family)}
-.project-dialog h3{font-size:var(--type-subheading-size-15px);font-weight:var(--type-subheading-weight-550);margin-top:30px;margin-bottom:12px;font-family:var(--type-subheading-family)}
+.project-dialog h3{font-size:var(--type-subheading-size-15px);font-weight:var(--type-subheading-weight);margin-top:30px;margin-bottom:12px;font-family:var(--type-subheading-family)}
 .project-dialog ul{padding-left:18px}
 .project-dialog .project-dialog-status{font-size:var(--type-label-size-12px);border-left:2px solid #8bafc4;padding-left:15px;margin-bottom:25px;font-family:var(--type-label-family)}
 .project-dialog .project-dialog-footnote{font-size:var(--type-body-size-11px);margin:30px 0 0;border-top:1px solid #c9c9c5;padding-top:20px;font-family:var(--type-body-family)}

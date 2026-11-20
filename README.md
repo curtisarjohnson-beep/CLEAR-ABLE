@@ -32,7 +32,7 @@ Vite uses relative asset URLs so the build works at the repository Pages subpath
 - Layout, palette, responsive rules and animation: `src/style.css`
 - Metadata: `index.html`
 
-Font sources and licences are documented in `src/fonts/candidates/LICENSING.md`; all three current comparison families are self-hosted under the SIL Open Font License. Replace placeholders and add verified business/contact/legal information before public launch.
+Font sources and licences are documented in `src/fonts/LICENSING.md`; Outfit and Manrope are self-hosted under the SIL Open Font License. Replace placeholders and add verified business/contact/legal information before public launch.
 
 ## Enquiry delivery (not connected)
 
@@ -48,24 +48,21 @@ Portfolio descriptions are proposed project focuses, not verified outcomes. Repl
 
 The portfolio uses a horizontal row of large rectangular previews on a shallow curved path. Neighbouring cards tilt gently; the centred card is upright. Repeated sets provide seamless slow travel. Hover, keyboard focus, offscreen state, hidden tabs and project dialogs pause automatic motion. Touch/manual navigation pauses it until Play is selected. Previous/Next controls and horizontal swiping work at all sizes. Reduced-motion users get a still, untilted row. Stable project links and Escape-enabled dialogs retain keyboard access and focus restoration.
 
-## Live typography-system comparison
+## Permanent typography — Architectural + Humanist
 
-Open **Type lab** at the bottom right and choose:
+The website uses exactly two self-hosted families. Role assignments are centralised in `src/typography.css`:
 
-1. **Outfit Only (baseline)** — Outfit for every non-logo role.
-2. **Contemporary + Editorial** (default) — Outfit headings, body, navigation, labels and buttons; Newsreader editorial statements and quotes, with a real italic face for emphasis.
-3. **Architectural + Humanist** — Outfit headings and subheadings; Manrope body, navigation, labels, buttons and editorial text.
+| Role | Family | Weight |
+| --- | --- | --- |
+| Hero/display headings | Outfit | SemiBold 600 |
+| Section and smaller content headings | Outfit | Medium 500 |
+| Body, introductory/supporting text, quotes | Manrope | Regular 400 |
+| Navigation, buttons, labels and eyebrows | Manrope | Medium 500 |
 
-The existing short Approach and Freedom statements follow the editorial role. The clearly labelled **Temporary editorial preview** inside Type lab reuses existing copy at a larger size to compare regular and emphasized text. It is separate from the production page content and is removed with the selector.
+Existing size, line-height and tracking tokens remain in that file for the later rhythm review. Quotes stay upright and use the existing size/spacing treatment. Layout and animation rules remain in `style.css` and `portfolio.css`.
 
-The preference is validated and stored under `clear-able:typography-system:v1`; the old individual-font preference is intentionally ignored so the new experiment starts at Option 02. Refresh, homepage navigation and other tabs keep the system selection. If browser storage is disabled, switching still works for the current visit.
+The supplied `src/assets/clear-and-able-wordmark.svg` is used unchanged in the header and footer. The footer no longer constructs a separate logo from HTML text or loads Cormorant Garamond.
 
-All fonts are self-hosted. `ensureTypographyFonts()` preloads all three families, including Newsreader italic, once at startup. The selector is briefly disabled during initial preparation; changes then apply synchronously through role variables, without a new stylesheet or font download. Loading failures are explicitly reported rather than presenting a fallback as a valid comparison.
+`src/fonts/` contains the two unchanged variable WOFF2 files and source documentation; `public/font-licenses/` ships the original copyright/licence notices with the website. Both fonts are preloaded through Vite-resolved asset URLs in `index.html`, use `font-display: swap`, and fall back to Arial/Helvetica/sans-serif. No external font endpoint is used.
 
-- `src/typography.css`: unchanged role sizes, weights, spacing and independent logo settings.
-- `src/typography-experiment.css`: self-hosted font faces, system-to-role assignments and isolated control/sample styles.
-- `src/TypographySelector.tsx`: removable selector and temporary specimen.
-- `src/typography-preference.ts`: system definitions, validation, storage, startup font preparation.
-- `src/fonts/candidates/LICENSING.md`: sources, weights and licence details.
-
-To finish the experiment, set the final role-family assignments in the central typography stylesheet, retain only the necessary self-hosted font faces, and remove `TypographySelector`, its imports, preference startup and experiment control/sample CSS. No application content or animation depends on the selector. Both the header SVG and existing footer wordmark are excluded from all systems.
+The typography selector, temporary editorial preview, dataset switching, localStorage preferences, storage event handlers and experiment stylesheet have been removed. Old browser preferences have no effect; the site no longer reads or writes them. Inter, Satoshi, General Sans, Newsreader, Cormorant Garamond and the old logo-only Outfit Light file are not shipped.
