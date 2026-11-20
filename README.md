@@ -32,7 +32,7 @@ Vite uses relative asset URLs so the build works at the repository Pages subpath
 - Layout, palette, responsive rules and animation: `src/style.css`
 - Metadata: `index.html`
 
-Font sources and licences are documented in `src/fonts/candidates/LICENSING.md`; the comparison uses official Fontshare delivery and a self-hosted Outfit font. Replace placeholders and add verified business/contact/legal information before public launch.
+Font sources and licences are documented in `src/fonts/candidates/LICENSING.md`; all three current comparison families are self-hosted under the SIL Open Font License. Replace placeholders and add verified business/contact/legal information before public launch.
 
 ## Enquiry delivery (not connected)
 
@@ -48,18 +48,24 @@ Portfolio descriptions are proposed project focuses, not verified outcomes. Repl
 
 The portfolio uses a horizontal row of large rectangular previews on a shallow curved path. Neighbouring cards tilt gently; the centred card is upright. Repeated sets provide seamless slow travel. Hover, keyboard focus, offscreen state, hidden tabs and project dialogs pause automatic motion. Touch/manual navigation pauses it until Play is selected. Previous/Next controls and horizontal swiping work at all sizes. Reduced-motion users get a still, untilted row. Stable project links and Escape-enabled dialogs retain keyboard access and focus restoration.
 
-## Live typography comparison
+## Live typography-system comparison
 
-Open **Type lab** at the bottom right, then choose **General Sans**, **Satoshi** or **Outfit**. General Sans is the initial choice. The selection changes all non-logo text and is stored under `clear-able:typeface:v1` in localStorage, so refresh/navigation retains it. Another tab updates through the storage event. With storage disabled, switching still works for the current visit.
+Open **Type lab** at the bottom right and choose:
 
-The selector is a separate native details/select UI using system fonts, outside the actual design. A visible unavailable state means the named candidate did not load; it is never reported as ready merely because a fallback rendered. Outfit is bundled locally; General Sans and Satoshi use Fontshare's official webfont service. Fontshare delivery could not be verified in this restricted development environment.
+1. **Outfit Only (baseline)** — Outfit for every non-logo role.
+2. **Contemporary + Editorial** (default) — Outfit headings, body, navigation, labels and buttons; Newsreader editorial statements and quotes, with a real italic face for emphasis.
+3. **Architectural + Humanist** — Outfit headings and subheadings; Manrope body, navigation, labels, buttons and editorial text.
 
-- `src/typography.css`: existing central role sizes, weights, spacing and logo settings.
-- `src/typography-experiment.css`: candidate fonts, family/nearest-weight overrides and isolated control styles.
-- `src/TypographySelector.tsx`: removable comparison panel.
-- `src/typography-preference.ts`: validated preference storage and font-loading checks.
-- `src/fonts/candidates/LICENSING.md`: source, copyright, licensing requirements and weight mappings.
+The existing short Approach and Freedom statements follow the editorial role. The clearly labelled **Temporary editorial preview** inside Type lab reuses existing copy at a larger size to compare regular and emphasized text. It is separate from the production page content and is removed with the selector.
 
-General Sans offers 200/300/400/500/600/700; Satoshi is requested at 300/400/500/700/900; Outfit is variable 100–900. Unsupported current weights map to the closest available value (mapping table in the licence notes). All non-logo roles use the selected family. Both the supplied header SVG and the existing footer logo are excluded.
+The preference is validated and stored under `clear-able:typography-system:v1`; the old individual-font preference is intentionally ignored so the new experiment starts at Option 02. Refresh, homepage navigation and other tabs keep the system selection. If browser storage is disabled, switching still works for the current visit.
 
-To finish the experiment, choose a final family, set it in the central typography variables, and remove the selector, preference startup and experiment CSS imports from `main.tsx`. No page content or animation depends on the control. Inter is no longer loaded.
+All fonts are self-hosted. `ensureTypographyFonts()` preloads all three families, including Newsreader italic, once at startup. The selector is briefly disabled during initial preparation; changes then apply synchronously through role variables, without a new stylesheet or font download. Loading failures are explicitly reported rather than presenting a fallback as a valid comparison.
+
+- `src/typography.css`: unchanged role sizes, weights, spacing and independent logo settings.
+- `src/typography-experiment.css`: self-hosted font faces, system-to-role assignments and isolated control/sample styles.
+- `src/TypographySelector.tsx`: removable selector and temporary specimen.
+- `src/typography-preference.ts`: system definitions, validation, storage, startup font preparation.
+- `src/fonts/candidates/LICENSING.md`: sources, weights and licence details.
+
+To finish the experiment, set the final role-family assignments in the central typography stylesheet, retain only the necessary self-hosted font faces, and remove `TypographySelector`, its imports, preference startup and experiment control/sample CSS. No application content or animation depends on the selector. Both the header SVG and existing footer wordmark are excluded from all systems.

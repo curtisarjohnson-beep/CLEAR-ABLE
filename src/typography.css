@@ -4,7 +4,7 @@
 @font-face{font-family:'Cormorant Garamond';src:url('../public/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
 @font-face{font-family:Outfit;src:url('../public/fonts/outfit-latin-300-normal.woff2') format('woff2');font-style:normal;font-weight:300;font-display:swap}
 :root {
-  --font-existing: var(--comparison-family, "General Sans", Arial, Helvetica, sans-serif);
+  --font-existing: var(--system-body-family, "Outfit Comparison", Arial, Helvetica, sans-serif);
 
   /* Display */
   --type-display-family: var(--font-existing);
